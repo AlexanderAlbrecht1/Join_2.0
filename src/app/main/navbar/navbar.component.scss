@@ -1,8 +1,51 @@
 @import "../../../styles.scss";
 
 .navbar-wrapper {
+  box-sizing: border-box;
   width: 232px;
   height: 100vh;
-  background-color: $navbarGrey;
+  background-color: $navbarBlue;
+  padding: 64px 0;
+  justify-content: space-between;
 }
+
+p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: $fontgrey
+}
+
+.navbar-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  >img {
+    width: 100px;
+    height: 122px;
+  }
+}
+
+.navigate {
+  width: 100%;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    cursor: pointer;
+    background-color: $hoverBlue;
+    >p {
+      color: $whitewhite;
+    }
+    color: $whitewhite;
+    }
+
+}
+
+.navbar-main {
+  gap: 16px;
+}
+
+
 

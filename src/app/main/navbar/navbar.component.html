@@ -1,7 +1,7 @@
-<div class="navbar-wrapper">
+<div class="navbar-wrapper column">
 
   <div class="navbar-logo">
-
+    <img src="/img/log_navbar.svg" alt="">
   </div>
 
   <div class="navbar-main column">
@@ -12,7 +12,7 @@
   </div>
 
   <div class="navbar-legal column">
-    <p [routerLink]="['privacypolicy']" routerLinkActive="router-link-active">Privacy Policy</p>
-    <p [routerLink]="['imprint']" routerLinkActive="router-link-active">Legal notice</p>
+    <p [routerLink]="['privacypolicy']" routerLinkActive="router-link-active" class="navigate">Privacy Policy</p>
+    <p [routerLink]="['imprint']" routerLinkActive="router-link-active" class="navigate">Legal notice</p>
   </div>
 </div>
