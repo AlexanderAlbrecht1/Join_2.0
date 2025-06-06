@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: auto;
+}
+
+p {
+  all: unset;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+
+$navbarBlue: rgba(42, 54, 71, 1);
+$hoverBlue: rgba(9, 25, 49, 1);
+$whitewhite:  rgba(255, 255, 255, 1);
+$fontgrey: rgba(168, 168, 168, 1), //Grau Schrift Navbar

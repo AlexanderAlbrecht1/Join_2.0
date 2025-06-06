@@ -1,1 +1,20 @@
-<p>navbar works!</p>
+
+<div class="navbar-wrapper column">
+
+  <div class="navbar-logo">
+    <img src="/img/log_navbar.svg" alt="">
+  </div>
+
+  <div class="navbar-main column">
+    <div [routerLink]="['summary']" routerLinkActive="router-link-active"  class="navigate"><p>Summary</p></div>
+    <div [routerLink]="['addtask']" routerLinkActive="router-link-active" class="navigate"><p>Add Task</p></div>
+    <div [routerLink]="['board']" routerLinkActive="router-link-active" class="navigate"><p>Board</p></div>
+    <div [routerLink]="['contacts']" routerLinkActive="router-link-active" class="navigate"><p> Contacts</p></div>
+  </div>
+
+  <div class="navbar-legal column">
+    <p [routerLink]="['privacypolicy']" routerLinkActive="router-link-active" class="navigate">Privacy Policy</p>
+    <p [routerLink]="['imprint']" routerLinkActive="router-link-active" class="navigate">Legal notice</p>
+  </div>
+</div>
+
