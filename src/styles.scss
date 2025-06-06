@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: auto;
+}
+
+p {
+  all: unset;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+
+$navbarGrey: rgba(42, 54, 71, 1);
