@@ -5,14 +5,14 @@
   </div>
 
   <div class="navbar-main column">
-    <p>Summary</p>
-    <p>Add Task</p>
-    <p>Board</p>
-    <p> Contacts</p>
+    <div [routerLink]="['summary']" routerLinkActive="router-link-active"  class="navigate"><p>Summary</p></div>
+    <div [routerLink]="['addtask']" routerLinkActive="router-link-active" class="navigate"><p>Add Task</p></div>
+    <div [routerLink]="['board']" routerLinkActive="router-link-active" class="navigate"><p>Board</p></div>
+    <div [routerLink]="['contacts']" routerLinkActive="router-link-active" class="navigate"><p> Contacts</p></div>
   </div>
 
   <div class="navbar-legal column">
-    <p>Privacy Policy</p>
-    <p>Legal notice</p>
+    <p [routerLink]="['privacypolicy']" routerLinkActive="router-link-active">Privacy Policy</p>
+    <p [routerLink]="['imprint']" routerLinkActive="router-link-active">Legal notice</p>
   </div>
 </div>
