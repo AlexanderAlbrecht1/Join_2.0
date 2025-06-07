@@ -27,11 +27,14 @@ p {
 }
 
 .navigate {
+  box-sizing: border-box;
   width: 100%;
   height: 46px;
   display: flex;
-  justify-content: center;
+  // justify-content: center;
+  padding-left: 56px;
   align-items: center;
+  gap: 8px;
   &:hover {
     cursor: pointer;
     background-color: $hoverBlue;
@@ -39,12 +42,47 @@ p {
       color: $whitewhite;
     }
     color: $whitewhite;
+    >.summary{
+      background-image: url(/img/nav_summary_hover.svg);
     }
+    >.add-task {
+      background-image: url(/img/nav_addTask_hover.svg);
+    }
+    >.board {
+      background-image: url(/img/nav_board_hover.svg);
+    }
+    >.contacts {
+      background-image: url(/img/nav_contacts_hover.svg);
+    }
+  }
 
 }
 
 .navbar-main {
   gap: 16px;
+}
+
+.icon-wrapper {
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.summary {
+  background-image: url(/img/nav_summary.svg);
+}
+
+.add-task {
+  background-image: url(/img/nav_addTask.svg);
+}
+
+.board {
+  background-image: url(/img/nav_board.svg);
+}
+
+.contacts {
+  background-image: url(/img/nav_contacts.svg);
 }
 
 
