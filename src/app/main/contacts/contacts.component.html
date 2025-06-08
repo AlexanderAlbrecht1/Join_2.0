@@ -4,7 +4,7 @@
       <div class="contact-monogram" [ngStyle]="{ 'background-color': contact.color }" ></div>
       <div class="name-mail column">
          <p>{{ contact.name }}</p>
-         <p> {{ contact.email }} </p>
+         <a href="mailto:{{contact.mail}}">{{ contact.email }}</a>
       </div>
     </div>
   </div>

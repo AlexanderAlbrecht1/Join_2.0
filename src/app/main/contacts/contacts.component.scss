@@ -14,10 +14,30 @@
 }
 
 .contact-monogram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 42px;
   height: 42px;
   border-radius: 100%;
 }
+
+.name-mail {
+  justify-content: center;
+  >p:nth-child(1) {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+  }
+  >a {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 18px;
+    text-decoration: none;
+    color: $linkBlue;
+  }
+ }
 
 
 
