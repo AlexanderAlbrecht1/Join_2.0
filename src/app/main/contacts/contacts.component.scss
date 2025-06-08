@@ -1,0 +1,24 @@
+@import '../../../styles.scss';
+
+.contact-book {
+  width: 400px;
+  align-items: center;
+}
+
+.single-contact {
+  box-sizing: border-box;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  gap: 32px;
+}
+
+.contact-monogram {
+  width: 42px;
+  height: 42px;
+  border-radius: 100%;
+}
+
+
+
+
