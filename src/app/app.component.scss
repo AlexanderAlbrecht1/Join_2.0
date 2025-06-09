@@ -1,3 +1,9 @@
-.wrapper {
+@import "../styles.scss";
+
+.whole-wrapper {
   display: flex;
+}
+
+.column {
+  width: 100%;
 }

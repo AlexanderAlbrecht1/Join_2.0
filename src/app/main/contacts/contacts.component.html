@@ -1,1 +1,11 @@
-<p>contacts works!</p>
+<div class="wrapper">
+  <div class="contact-book column">
+    <div class="single-contact" *ngFor="let contact of contacts">
+      <div class="contact-monogram" [ngStyle]="{ 'background-color': contact.color }" ></div>
+      <div class="name-mail column">
+         <p>{{ contact.name }}</p>
+         <a href="mailto:{{contact.mail}}">{{ contact.email }}</a>
+      </div>
+    </div>
+  </div>
+</div>

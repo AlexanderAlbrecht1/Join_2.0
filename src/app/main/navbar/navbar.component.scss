@@ -25,6 +25,9 @@ p {
     width: 100px;
     height: 122px;
   }
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .navigate {

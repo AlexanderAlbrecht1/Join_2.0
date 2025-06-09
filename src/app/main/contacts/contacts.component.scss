@@ -1,0 +1,44 @@
+@import '../../../styles.scss';
+
+.contact-book {
+  width: 400px;
+  align-items: center;
+}
+
+.single-contact {
+  box-sizing: border-box;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  gap: 32px;
+}
+
+.contact-monogram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 100%;
+}
+
+.name-mail {
+  justify-content: center;
+  >p:nth-child(1) {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+  }
+  >a {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 18px;
+    text-decoration: none;
+    color: $linkBlue;
+  }
+ }
+
+
+
+
