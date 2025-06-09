@@ -5,7 +5,8 @@
     align-items: $ai;
 }
 
-@mixin fontSize($size: 20px, $weight: 400) {
+@mixin fontSize($size: 20px, $weight: 400, $height: 120%) {
     font-size: $size;
     font-weight: $weight;
+    line-height: $height;
 }
