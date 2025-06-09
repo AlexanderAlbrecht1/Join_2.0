@@ -1,1 +1,41 @@
+@import "../../../styles.scss";
+@import "../../../mixins.scss";
 
+
+
+.summary-wrapper {
+    max-width: 1920px;
+    width: 100%;
+    background-color: $bgColor;
+
+    >.summary-head-container {
+        @include dFlex();
+        gap: 30px;
+
+        >h1 {
+            @include fontSize($size: 61px, $weight: 700);
+            margin: 0;
+        }
+
+        >.seperator {
+            height: 59px;
+            width: 3px;
+            background-color: $lightBlue;
+        }
+
+        >h4 {
+            @include fontSize($size: 27px, $weight: 400);
+            margin: 0;
+        }
+    }
+
+
+    .greeting {
+        @include fontSize($size: 47px, $weight: 500);
+    }
+
+    .initials {
+        @include fontSize($size: 64px, $weight: 700);
+        color: $lightBlue;
+    }
+}
