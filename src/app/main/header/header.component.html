@@ -1,9 +1,14 @@
 <div class="wrapper">
   <p class="font-inter">Kanban Project Management Tool</p>
   <div>
-    <div class="help-icon-warpper"></div>
-    <div class="logged-user-monogram">
+    <div [routerLink]="['help']" routerLinkActive="router-link-active"  matTooltip="Need Help?" class="help-icon-warpper"></div>
+    <div class="logged-user-monogram" [matMenuTriggerFor]="menu" #menuTrigger>
       <p class="font-inter"> {{ loggedUser.initials }}</p>
     </div>
+    <mat-menu #menu="matMenu" panelClass="custom-menu">
+      <button mat-menu-item [routerLink]="['imprint']">Legal Notice</button>
+      <button mat-menu-item [routerLink]="['privacypolicy']">Privacy Policy</button>
+      <button mat-menu-item (click)="LogOut()">Log out</button>
+    </mat-menu>
   </div>
 </div>
