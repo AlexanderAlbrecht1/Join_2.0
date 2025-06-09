@@ -1,26 +1,22 @@
 @import "../../../styles.scss";
+@import "../../../mixins.scss";
 
 .navbar-wrapper {
+  @include dFlex($fd: column, $jc: space-between, $ai: normal);
   box-sizing: border-box;
   width: 232px;
   height: 100vh;
   background-color: $navbarBlue;
   padding: 64px 0;
-  justify-content: space-between;
 }
 
 p {
-  font-family: 'Inter';
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 120%;
+  @include fontSize($size: 16px);
   color: $fontgrey
 }
 
 .navbar-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include dFlex();
   >img {
     width: 100px;
     height: 122px;
@@ -31,13 +27,11 @@ p {
 }
 
 .navigate {
+  @include dFlex($jc: unset);
   box-sizing: border-box;
   width: 100%;
   height: 46px;
-  display: flex;
-  // justify-content: center;
   padding-left: 56px;
-  align-items: center;
   gap: 8px;
   &:hover {
     cursor: pointer;

@@ -4,12 +4,16 @@
 
 
 .summary-wrapper {
+    height: calc(100vh - 96px);
     max-width: 1920px;
     width: 100%;
     background-color: $bgColor;
 
     >.summary-head-container {
-        @include dFlex();
+        @include dFlex($jc: flex-start);
+        padding-left: 116px;
+        padding-bottom: 56px;
+        padding-top: 60px; //eventuell noch anpassen wenn die Daten geliefert werden 
         gap: 30px;
 
         >h1 {
@@ -28,13 +32,90 @@
             margin: 0;
         }
     }
+}
+
+.content-wrapper {
+    @include dFlex($jc: flex-start);
+    padding-left: 116px;
+
+    >div:first-child {
+        @include dFlex($fd: column);
+        gap: 28px;
+    }
+}
+
+.first-wrapper {
+    @include dFlex($jc: space-between);
+    gap: 32px;
+
+    >mat-card {
+        @include dFlex();
+        @include fontSize();
+        // height: 168px;
+        width: 264px;
+        gap: 18px;
+        padding: 19px 38px;
+        border-radius: 30px;
+        background-color: white;
+
+        >div {
+            @include dFlex($fd: column)
+        }
+    }
+}
+
+.second-wrapper {
+    @include dFlex($jc: space-between);
+    gap: 32px;
+
+    >mat-card {
+        @include dFlex($jc: space-around);
+        @include fontSize();
+        // height: 168px;
+        width: 560px;
+        gap: 18px;
+        padding: 19px 38px;
+        border-radius: 30px;
+        background-color: white;
+
+        >.seperator {
+            height: 102px;
+            border: 1px solid $fontgrey;
+        }
+
+        >.deadline-container {
+            @include dFlex($fd: column);
+        }
+    }
+}
+
+.third-wrapper {
+    @include dFlex($jc: space-between);
+    gap: 13px;
+    width: 560px;
+
+    >mat-card {
+        @include dFlex($fd: column);
+        @include fontSize();
+        // height: 168px;
+        width: 168px;
+        gap: 18px;
+        padding: 25px;
+        border-radius: 30px;
+        text-align: center;
+        background-color: white;
+    }
+}
+
+.greetings-container {
+    padding-left: 80px;
 
 
-    .greeting {
+    >.greeting {
         @include fontSize($size: 47px, $weight: 500);
     }
 
-    .initials {
+    >.initials {
         @include fontSize($size: 64px, $weight: 700);
         color: $lightBlue;
     }

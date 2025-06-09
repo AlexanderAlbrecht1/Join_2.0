@@ -16,7 +16,6 @@ p {
 }
 
 
-
 .column {
   display: flex;
   flex-direction: column;
@@ -110,3 +109,6 @@ $linkBlue: rgba(0, 124, 238, 1);
   font-weight: 900;
   src: url('/fonts/inter-v19-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
