@@ -5,6 +5,7 @@ import { BoardComponent } from './main/board/board.component';
 import { ContactsComponent } from './main/contacts/contacts.component';
 import { PrivacyPolicyComponent } from './legal/privacyPolicy/privacy-policy/privacy-policy.component';
 import { ImprintComponent } from './legal/imprint/imprint/imprint.component';
+import { HelpsectionComponent } from './legal/helpsection/helpsection.component';
 
 export const routes: Routes = [
   {path: 'summary', component: SummaryComponent},
@@ -14,4 +15,5 @@ export const routes: Routes = [
   {path: '', component: SummaryComponent},
   {path: 'privacypolicy', component: PrivacyPolicyComponent},
   {path: 'imprint', component: ImprintComponent},
+  {path: 'help', component: HelpsectionComponent},
 ];

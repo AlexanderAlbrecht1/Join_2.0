@@ -1,0 +1,6 @@
+@import '../../../styles.scss';
+@import '../../../mixins.scss';
+
+section {
+  @include dFlex;
+}
