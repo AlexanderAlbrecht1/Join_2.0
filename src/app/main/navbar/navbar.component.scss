@@ -47,16 +47,16 @@ p {
     }
     color: $whitewhite;
     >.summary{
-      background-image: url(/img/nav_summary_hover.svg);
+      background-image: url(/img/navbar/nav_summary_hover.svg);
     }
     >.add-task {
-      background-image: url(/img/nav_addTask_hover.svg);
+      background-image: url(/img/navbar/nav_addTask_hover.svg);
     }
     >.board {
-      background-image: url(/img/nav_board_hover.svg);
+      background-image: url(/img/navbar/nav_board_hover.svg);
     }
     >.contacts {
-      background-image: url(/img/nav_contacts_hover.svg);
+      background-image: url(/img/navbar/nav_contacts_hover.svg);
     }
   }
 
@@ -74,19 +74,19 @@ p {
 }
 
 .summary {
-  background-image: url(/img/nav_summary.svg);
+  background-image: url(/img/navbar/nav_summary.svg);
 }
 
 .add-task {
-  background-image: url(/img/nav_addTask.svg);
+  background-image: url(/img/navbar/nav_addTask.svg);
 }
 
 .board {
-  background-image: url(/img/nav_board.svg);
+  background-image: url(/img/navbar/nav_board.svg);
 }
 
 .contacts {
-  background-image: url(/img/nav_contacts.svg);
+  background-image: url(/img/navbar/nav_contacts.svg);
 }
 
 
