@@ -1,0 +1,41 @@
+@import "../../../styles.scss";
+@import "../../../mixins.scss";
+
+.dialog-wrapper {
+  display: flex;
+  height: 100%;
+}
+
+.left-side {
+  background-color: $navbarBlue;
+  width: 467px;
+  height: 100%;
+}
+
+
+.right-side {
+  @include dFlex();
+  gap: 72px;
+  padding: 137px 48px 135px 83px;
+}
+
+.icon-wrapper {
+  width: 120px;
+  height: 120px;
+  background-position: center;
+  background-size: contain;
+  background-image: url('/img/contacts/new_contact_mongram.svg');
+}
+
+form {
+  @include dFlex($fd: column);
+}
+
+input {
+  box-sizing: border-box;
+  width: 422px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid rgba(209, 209, 209, 1);
+  padding: 13px 21px;
+}

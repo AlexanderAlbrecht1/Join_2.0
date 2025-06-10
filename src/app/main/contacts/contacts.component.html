@@ -1,10 +1,21 @@
 <div class="wrapper">
   <div class="contact-book column">
+    <div class="button-wrapper">
+      <button class="add-contact-btn" mat-button (click)="openDialogAddContact()">
+        Add new contact
+        <div class="icon-wrapper"></div>
+      </button>
+    </div>
     <div class="single-contact" *ngFor="let contact of contacts">
-      <div class="contact-monogram" [ngStyle]="{ 'background-color': contact.color }" ></div>
+      <div
+        class="contact-monogram"
+        [ngStyle]="{ 'background-color': contact.color }"
+      >
+        <p>{{ contact.initials }}</p>
+      </div>
       <div class="name-mail column">
-         <p>{{ contact.name }}</p>
-         <a href="mailto:{{contact.mail}}">{{ contact.email }}</a>
+        <p>{{ contact.name }}</p>
+        <a href="mailto:{{ contact.mail }}">{{ contact.email }}</a>
       </div>
     </div>
   </div>

@@ -1,0 +1,55 @@
+<section class="dialog-wrapper">
+  <div class="left-side">
+    <div class="join-logo-wrapper"></div>
+    <p>Add contact</p>
+    <p>Tasks are better with a team!</p>
+    <div class="seperator"></div>
+  </div>
+  <div class="right-side">
+    <div class="icon-wrapper"></div>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <input id="name" type="text" formControlName="name" placeholder="Name" />
+      <p
+        *ngIf="
+          profileForm.get('name')?.invalid && profileForm.get('name')?.touched
+        "
+      >
+        Please enter a name
+      </p>
+
+      <input
+        id="email"
+        type="text"
+        formControlName="email"
+        placeholder="Email"
+      />
+      <p
+        *ngIf="
+          profileForm.get('email')?.invalid && profileForm.get('email')?.touched
+        "
+      >
+        Please enter a valid email.
+      </p>
+
+      <input
+        id="phone"
+        type="text"
+        formControlName="phone"
+        placeholder="Phone"
+      />
+      <p
+        *ngIf="
+          profileForm.get('phone')?.invalid && profileForm.get('phone')?.touched
+        "
+      >
+        Please enter a phone number.
+      </p>
+
+      <p *ngIf="!profileForm.valid">Bidde alles ausfüllen!</p>
+      <div class="button-wrapper">
+        <button>Cancel</button>
+        <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+      </div>
+    </form>
+  </div>
+</section>
