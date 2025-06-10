@@ -1,4 +1,5 @@
-@import '../../../styles.scss';
+@import "../../../mixins.scss";
+@import "../../../styles.scss";
 
 .contact-book {
   width: 400px;
@@ -20,25 +21,56 @@
   width: 42px;
   height: 42px;
   border-radius: 100%;
+  > p {
+    font-family: "Inter";
+    color: $whitewhite;
+    @include fontSize();
+  }
 }
 
 .name-mail {
   justify-content: center;
-  >p:nth-child(1) {
-    font-family: 'Inter';
+  > p:nth-child(1) {
+    font-family: "Inter";
     font-weight: 400;
     font-size: 20px;
     line-height: 120%;
   }
-  >a {
-    font-family: 'Inter';
-    font-weight: 400;
-    font-size: 18px;
+  > a {
+    font-family: "Inter";
+    @include fontSize($size: 18px);
     text-decoration: none;
     color: $linkBlue;
   }
- }
+}
 
+//Add contact button
 
+.button-wrapper {
+  padding: 24px 0
+}
 
+.add-contact-btn {
+  box-sizing: border-box;
+  @include dFlex();
+  padding: 12px 64px;
+  gap: 16px;
+  background-color: $navbarBlue;
+  border-radius: 10px;
+  border: none;
+  color: $whitewhite;
+  font-family: "Inter";
+  @include fontSize($size: 21px, $weight: 700);
+  &:hover {
+    cursor: pointer;
+    background-color: $lightBlue;
+  }
+}
 
+.icon-wrapper {
+  width: 32px;
+  height: 32px;
+  background-image: url("/img/contacts/add_contact_icon.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
