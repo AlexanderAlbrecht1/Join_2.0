@@ -1,1 +1,23 @@
-<p>sign-in works!</p>
+<section class="log-in-wrapper">
+
+    <mat-card class="log-in-card" appearance="outlined">
+        <mat-card-title class="font-inter">Log in</mat-card-title>
+        <form class="form-wrapper">
+            <div>
+                <input class="font-inter" type="email" matInput [formControl]="eMail" placeholder="Email">
+                <img src="" alt="">
+            </div>
+
+            <div>
+                <input class="font-inter" type="password" matInput [formControl]="eMail" placeholder="Password">
+                <img src="" alt="">
+            </div>
+        </form>
+        <div class="button-wrapper">
+            <button class="font-inter">Log in</button>
+            <button class="font-inter">Guest Log in</button>
+        </div>
+    </mat-card>
+
+
+</section>
