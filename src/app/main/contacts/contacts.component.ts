@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { SupabaseService } from '../../services/supabase.service';
+
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import {
@@ -10,6 +10,7 @@ import {
   MatDialogTitle,
 } from '@angular/material/dialog';
 import { DialogAddContactComponent } from '../../dialogs/dialog-add-contact/dialog-add-contact.component';
+import { ContactsService } from '../../services/contacts.service';
 
 @Component({
   selector: 'app-contacts',
@@ -22,12 +23,12 @@ export class ContactsComponent {
 
   readonly dialog = inject(MatDialog);
 
-  constructor(private supabaseService: SupabaseService) {
+  constructor(private contactService: ContactsService) {
     this.loadContacts();
   }
 
   async loadContacts() {
-    this.contacts = await this.supabaseService.getContacts();
+    this.contacts = await this.contactService.getContacts();
     console.log('Contacts loaded:', this.contacts);
   }
 

@@ -19,12 +19,4 @@ export class SupabaseService {
     return this.supabase;
   }
 
-  async getContacts() {
-    const { data, error } = await this.supabase
-      .from('contacts')
-      .select('*')
-      if (error) throw error;
-  return data;
-  }
-
 }
