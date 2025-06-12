@@ -24,12 +24,21 @@ export class ContactsComponent {
   readonly dialog = inject(MatDialog);
 
   constructor(private contactService: ContactsService) {
-    this.loadContacts();
+    this.showConatacts();
   }
 
   async loadContacts() {
     this.contacts = await this.contactService.getContacts();
     console.log('Contacts loaded:', this.contacts);
+  }
+
+  sortContactsByName() {
+     return this.contacts.sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+  async showConatacts() {
+    await this.loadContacts();
+    this.contacts = this.sortContactsByName();
   }
 
   openDialogAddContact() {
