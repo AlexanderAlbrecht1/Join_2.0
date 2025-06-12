@@ -4,13 +4,15 @@
 .contact-book {
   width: 400px;
   align-items: center;
+  padding: 0 24px;
 }
 
 .single-contact {
   box-sizing: border-box;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  width: 100%;
+  padding: 15px 24px;
   display: flex;
+  justify-content: flex-start;
   gap: 32px;
 }
 
