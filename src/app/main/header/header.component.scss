@@ -30,11 +30,11 @@
 }
 
 .logged-user-monogram {
+  @include dFlex;
   width: 56px;
   height: 56px;
   border: 3px solid $navbarBlue;
   border-radius: 100%;
-  @include dFlex();
   > p {
     color: $lightBlue;
     @include fontSize($weight: 600);
@@ -44,3 +44,8 @@
     cursor: pointer;
   }
 }
+
+
+
+
+

@@ -7,6 +7,7 @@ import { PrivacyPolicyComponent } from './legal/privacyPolicy/privacy-policy/pri
 import { ImprintComponent } from './legal/imprint/imprint/imprint.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { HelpsectionComponent } from './legal/helpsection/helpsection.component';
 
 export const routes: Routes = [
   {path: 'sign-in', component: SignInComponent},
@@ -18,4 +19,5 @@ export const routes: Routes = [
   {path: '', component: SummaryComponent},
   {path: 'privacypolicy', component: PrivacyPolicyComponent},
   {path: 'imprint', component: ImprintComponent},
+  {path: 'help', component: HelpsectionComponent},
 ];
