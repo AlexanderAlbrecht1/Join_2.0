@@ -4,13 +4,15 @@
         <mat-card-title class="font-inter">Log in</mat-card-title>
         <form class="form-wrapper">
             <div>
-                <input class="font-inter" type="email" matInput [formControl]="eMail" placeholder="Email">
-                <img src="" alt="">
+                <input class="font-inter" id="email" type="email" name="E-Mail" placeholder="E-Mail" required>
             </div>
 
             <div>
-                <input class="font-inter" type="password" matInput [formControl]="eMail" placeholder="Password">
-                <img src="" alt="">
+                <input placeholder="Password" matInput [type]="hide() ? 'password' : 'text'" />
+                <button matIconButton matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide()">
+                    <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
             </div>
         </form>
         <div class="button-wrapper">

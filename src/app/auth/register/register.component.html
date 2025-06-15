@@ -1,1 +1,20 @@
-<p>register works!</p>
+<section class="sign-up-wrapper">
+    <h1>Sign up</h1>
+    <form action="">
+        <div class="input-wrapper">
+            <input placeholder="Name" type="text">
+            <input placeholder="Email" type="email">
+            <input placeholder="Password" type="password">
+            <input placeholder="Confirm Password" type="password">
+        </div>
+        <div class="policy-wrapper">
+            <input type="checkbox">
+            <h2>I accept the
+                <p [routerLink]="['/summary']" routerLinkActive="router-link-active">
+                    Privacy policy
+                </p>
+            </h2>
+        </div>
+    </form>
+    <button>Sign up</button>
+</section>

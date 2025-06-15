@@ -1,0 +1,15 @@
+@import '../../../styles.scss';
+@import '../../../mixins.scss';
+
+
+.sign-up-wrapper {
+    @include dFlex($fd: column);
+}
+
+.input-wrapper {
+    @include dFlex($fd: column);
+}
+
+.policy-wrapper {
+    @include dFlex();
+}
