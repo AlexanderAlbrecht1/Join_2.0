@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ContactsService } from '../../services/contacts.service';
 import { Contact } from '../../models/contact.model';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog-add-contact',
@@ -19,6 +20,7 @@ import { Contact } from '../../models/contact.model';
   styleUrl: './dialog-add-contact.component.scss',
 })
 export class DialogAddContactComponent {
+  dialog = inject(MatDialog);
 
   constructor(public ContactsService: ContactsService) {}
 
@@ -36,5 +38,9 @@ export class DialogAddContactComponent {
     } else {
       console.warn('Formular ungültig:', this.profileForm.value);
     }
+  }
+
+  closeDialog() {
+    this.dialog.closeAll();
   }
 }

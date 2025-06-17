@@ -1,7 +1,8 @@
 import { Contact } from './../models/contact.model';
-import { Injectable } from '@angular/core';
+import { Injectable  } from '@angular/core';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { environment } from '../../../environment';
+
 
 @Injectable({
   providedIn: 'root',
@@ -45,18 +46,18 @@ export class ContactsService {
   }
 
   generateColor(): string {
-  const hex = Math.floor(Math.random() * 0xffffff).toString(16);
-  return '#' + hex.padStart(6, '0').toUpperCase();
-}
+    const hex = Math.floor(Math.random() * 0xffffff).toString(16);
+    return '#' + hex.padStart(6, '0').toUpperCase();
+  }
 
   createNewContact(formValues: any) {
-          const newContact = new Contact({
-        ...formValues,
-        id: this.generateId(),
-        color: this.generateColor(),
-        initials: this.generateInitials(formValues.name ?? ''),
-      });
-      return newContact;
+    const newContact = new Contact({
+      ...formValues,
+      id: this.generateId(),
+      color: this.generateColor(),
+      initials: this.generateInitials(formValues.name ?? ''),
+    });
+    return newContact;
   }
 
 

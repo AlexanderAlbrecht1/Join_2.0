@@ -12,7 +12,6 @@
   height: 100%;
 }
 
-
 .right-side {
   @include dFlex();
   gap: 72px;
@@ -24,7 +23,7 @@
   height: 120px;
   background-position: center;
   background-size: contain;
-  background-image: url('/img/contacts/new_contact_mongram.svg');
+  background-image: url("/img/contacts/new_contact_mongram.svg");
 }
 
 form {
@@ -38,4 +37,66 @@ input {
   border-radius: 10px;
   border: 1px solid rgba(209, 209, 209, 1);
   padding: 13px 21px;
+}
+
+.button-wrapper {
+  @include dFlex();
+  gap: 24px;
+}
+
+.close-btn {
+  gap: 4px;
+  box-sizing: border-box;
+  width: 126px;
+  height: 56px;
+  @include dFlex();
+  padding: 16px;
+  border: 1px solid $navbarBlue;
+  border-radius: 10px;
+  > p {
+    font-family: "Inter";
+    @include fontSize();
+  }
+  > div {
+    width: 24px;
+    height: 24px;
+    background-image: url("/img/contacts/cancel_add_contact_icon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &:hover {
+    cursor: pointer;
+    color: $lightBlue;
+    border: 2px solid $lightBlue;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    > div {
+      background-image: url("/img/contacts/cancel_add_contact_icon_hover.svg");
+    }
+  }
+}
+
+.create-contact-btn {
+  border: none;
+  @include dFlex();
+  gap: 4px;
+  box-sizing: border-box;
+  width: 214px !important;
+  height: 56px;
+  background-color: $navbarBlue;
+  border-radius: 10px;
+  > p {
+    font-family: "Inter";
+    color: $whitewhite;
+    @include fontSize($size: 21px, $weight: 700);
+  }
+  > div {
+    width: 24px;
+    height: 24px;
+    @include backgroundPicture($url: "/img/contacts/check.svg");
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: $lightBlue;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
 }

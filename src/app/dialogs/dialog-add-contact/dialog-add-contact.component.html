@@ -47,8 +47,14 @@
 
       <p *ngIf="!profileForm.valid">Bidde alles ausfüllen!</p>
       <div class="button-wrapper">
-        <button>Cancel</button>
-        <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+        <div class="close-btn" (click)="closeDialog()">
+          <p>Cancel</p>
+          <div></div>
+        </div>
+        <button class="create-contact-btn" type="submit" [disabled]="!profileForm.valid">
+          <p>Create Contact</p>
+          <div></div>
+        </button>
       </div>
     </form>
   </div>

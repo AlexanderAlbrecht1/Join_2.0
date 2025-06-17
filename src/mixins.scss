@@ -10,3 +10,9 @@
     font-weight: $weight;
     line-height: $height;
 }
+
+@mixin backgroundPicture($url: '', $position: center, $repeat: no-repeat) {
+  background-image: url($url);
+  background-position: $position;
+  background-repeat: $repeat;
+}
