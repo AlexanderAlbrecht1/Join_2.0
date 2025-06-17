@@ -1,0 +1,83 @@
+@import '../../../styles.scss';
+@import '../../../mixins.scss';
+
+
+.log-in-wrapper {
+    @include dFlex();
+    background-color: $whitewhite;
+}
+
+.log-in-card {
+    @include dFlex($fd: column, $jc: space-evenly);
+    height: 449px;
+    width: 652px;
+    border-radius: 30px;
+    background-color: $whitewhite;
+
+    >mat-card-title {
+        @include fontSize($size: 61px, $weight: 700);
+    }
+}
+
+.form-wrapper {
+    @include dFlex($fd: column, $ai: normal);
+    gap: 20px;
+
+    >div {
+        @include dFlex($jc: space-between);
+        position: relative;
+
+        >input {
+            @include fontSize($size: 20px);
+            height: 48px;
+            width: 422px;
+            padding: 12px 21px;
+            border-radius: 15px;
+            border: 1px solid $inputBorder;
+        }
+
+        >button {
+            position: relative;
+            left: -60px;
+            top: -10px;
+            cursor: pointer;
+            background-color: $whitewhite;
+            border: unset;
+            
+            >mat-icon {
+                position: absolute;
+            }
+        }
+    }
+}
+
+.button-wrapper {
+    @include dFlex();
+    gap: 35px;
+
+    >:first-child {
+        @include dFlex();
+        @include fontSize($weight: 700);
+        height: 48px;
+        width: 110px;
+        padding: 15px 24px;
+        background-color: $navbarBlue;
+        color: white;
+        border: 1px solid black;
+        border-radius: 8px;
+        white-space: nowrap;
+    }
+
+    >:nth-child(2) {
+        @include dFlex();
+        @include fontSize($weight: 700);
+        height: 48px;
+        width: 177px;
+        padding: 15px 24px;
+        background-color: $whitewhite;
+        color: black;
+        border: 1px solid black;
+        border-radius: 8px;
+        white-space: nowrap;
+    }
+}

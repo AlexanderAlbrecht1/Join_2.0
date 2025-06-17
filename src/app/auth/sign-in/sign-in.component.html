@@ -1,1 +1,25 @@
-<p>sign-in works!</p>
+<section class="log-in-wrapper">
+
+    <mat-card class="log-in-card" appearance="outlined">
+        <mat-card-title class="font-inter">Log in</mat-card-title>
+        <form class="form-wrapper">
+            <div>
+                <input class="font-inter" id="email" type="email" name="E-Mail" placeholder="E-Mail" required>
+            </div>
+
+            <div>
+                <input placeholder="Password" matInput [type]="hide() ? 'password' : 'text'" />
+                <button matIconButton matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide()">
+                    <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </div>
+        </form>
+        <div class="button-wrapper">
+            <button class="font-inter">Log in</button>
+            <button class="font-inter">Guest Log in</button>
+        </div>
+    </mat-card>
+
+
+</section>
