@@ -1,20 +1,19 @@
 <section class="sign-up-wrapper">
-    <h1>Sign up</h1>
-    <form action="">
-        <div class="input-wrapper">
-            <input placeholder="Name" type="text">
-            <input placeholder="Email" type="email">
-            <input placeholder="Password" type="password">
-            <input placeholder="Confirm Password" type="password">
-        </div>
-        <div class="policy-wrapper">
-            <input type="checkbox">
-            <h2>I accept the
-                <p [routerLink]="['/summary']" routerLinkActive="router-link-active">
-                    Privacy policy
-                </p>
-            </h2>
-        </div>
-    </form>
-    <button>Sign up</button>
+  <h1>Sign up</h1>
+  <form (submit)="signUp(); $event.preventDefault();">
+    <div class="input-wrapper">
+      <input [(ngModel)]="name" name="name" placeholder="Name" type="text">
+      <input [(ngModel)]="email" name="email" placeholder="Email" type="email">
+      <input [(ngModel)]="password" name="password" placeholder="Password" type="password">
+      <input [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="Confirm Password" type="password">
+    </div>
+    <div class="policy-wrapper">
+      <input type="checkbox">
+      <h2>
+        I accept the
+        <a [routerLink]="['/privacypolicy']" routerLinkActive="router-link-active">Privacy policy</a>
+      </h2>
+    </div>
+    <button type="submit">Sign up</button>
+  </form>
 </section>
