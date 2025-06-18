@@ -18,6 +18,20 @@
   padding: 137px 48px 135px 83px;
 }
 
+.close-dialog-icon-wrapper {
+  position: absolute;
+  top: 48px;
+  right: 48px;
+  width: 32px;
+  height: 32px;
+  @include backgroundPicture($url: '/img/contacts/cancel_add_contact_icon.svg');
+  &:hover {
+    border-radius: 100%;
+    background-color: $borderGrey;
+    cursor: pointer;
+  }
+}
+
 .icon-wrapper {
   width: 120px;
   height: 120px;
@@ -39,7 +53,24 @@ input {
   padding: 13px 21px;
 }
 
+.validate-msg-placeholder {
+  box-sizing: border-box;
+  @include dFlex($ai: start);
+  height: 32px;
+  width: 422px;
+  > p {
+    color: $errMsgRed;
+    font-family: "Inter";
+    @include fontSize($size: 16px);
+  }
+}
+
+.hint {
+  color: black !important;
+}
+
 .button-wrapper {
+  margin-top: 32px;
   @include dFlex();
   gap: 24px;
 }
@@ -80,7 +111,7 @@ input {
   @include dFlex();
   gap: 4px;
   box-sizing: border-box;
-  width: 214px !important;
+  width: 214px;
   height: 56px;
   background-color: $navbarBlue;
   border-radius: 10px;
@@ -98,5 +129,26 @@ input {
     cursor: pointer;
     background-color: $lightBlue;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.create-contact-btn-invalid {
+  border: none;
+  @include dFlex();
+  gap: 4px;
+  box-sizing: border-box;
+  width: 214px;
+  height: 56px;
+  background-color: grey;
+  border-radius: 10px;
+  > p {
+    font-family: "Inter";
+    color: $whitewhite;
+    @include fontSize($size: 21px, $weight: 700);
+  }
+  > div {
+    width: 24px;
+    height: 24px;
+    @include backgroundPicture($url: "/img/contacts/check.svg");
   }
 }

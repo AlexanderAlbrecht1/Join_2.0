@@ -27,7 +27,6 @@ export class DialogAddContactComponent {
   profileForm = new FormGroup({
     name: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
-    phone: new FormControl('', Validators.required),
   });
 
   onSubmit() {
@@ -35,6 +34,7 @@ export class DialogAddContactComponent {
       const formValues = this.profileForm.value;
       const newContact = this.ContactsService.createNewContact(formValues);
       this.ContactsService.addContact(newContact);
+      this.closeDialog();
     } else {
       console.warn('Formular ungültig:', this.profileForm.value);
     }

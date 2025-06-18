@@ -5,17 +5,21 @@
     <p>Tasks are better with a team!</p>
     <div class="seperator"></div>
   </div>
+
   <div class="right-side">
+    <div class="close-dialog-icon-wrapper" (click)="closeDialog()"></div>
     <div class="icon-wrapper"></div>
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
       <input id="name" type="text" formControlName="name" placeholder="Name" />
-      <p
-        *ngIf="
-          profileForm.get('name')?.invalid && profileForm.get('name')?.touched
-        "
-      >
-        Please enter a name
-      </p>
+      <div class="validate-msg-placeholder">
+        <p
+          *ngIf="
+            profileForm.get('name')?.invalid && profileForm.get('name')?.touched
+          "
+        >
+          Please enter a name
+        </p>
+      </div>
 
       <input
         id="email"
@@ -23,35 +27,40 @@
         formControlName="email"
         placeholder="Email"
       />
-      <p
-        *ngIf="
-          profileForm.get('email')?.invalid && profileForm.get('email')?.touched
-        "
-      >
-        Please enter a valid email.
-      </p>
+      <div class="validate-msg-placeholder">
+        <p
+          *ngIf="
+            profileForm.get('email')?.invalid &&
+            profileForm.get('email')?.touched
+          "
+        >
+          Please enter a valid email.
+        </p>
+      </div>
 
-      <input
-        id="phone"
-        type="text"
-        formControlName="phone"
-        placeholder="Phone"
-      />
-      <p
-        *ngIf="
-          profileForm.get('phone')?.invalid && profileForm.get('phone')?.touched
-        "
-      >
-        Please enter a phone number.
-      </p>
+      <input id="phone" type="text" placeholder="Phone" />
+      <div class="validate-msg-placeholder"></div>
 
-      <p *ngIf="!profileForm.valid">Bidde alles ausfüllen!</p>
+      <div class="validate-msg-placeholder">
+        <p *ngIf="!profileForm.valid" class="hint">
+          Please enter Name und Email
+        </p>
+      </div>
+
       <div class="button-wrapper">
         <div class="close-btn" (click)="closeDialog()">
           <p>Cancel</p>
           <div></div>
         </div>
-        <button class="create-contact-btn" type="submit" [disabled]="!profileForm.valid">
+        <button
+          [ngClass]="
+            profileForm.valid
+              ? 'create-contact-btn'
+              : 'create-contact-btn-invalid'
+          "
+          type="submit"
+          [disabled]="!profileForm.valid"
+        >
           <p>Create Contact</p>
           <div></div>
         </button>
