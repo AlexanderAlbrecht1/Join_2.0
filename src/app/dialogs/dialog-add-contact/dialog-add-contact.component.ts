@@ -29,12 +29,13 @@ export class DialogAddContactComponent {
     email: new FormControl('', [Validators.required, Validators.email]),
   });
 
-  onSubmit() {
+  async onSubmit() {
     if (this.profileForm.valid) {
       const formValues = this.profileForm.value;
       const newContact = this.ContactsService.createNewContact(formValues);
-      this.ContactsService.addContact(newContact);
+      await this.ContactsService.addContact(newContact);
       this.closeDialog();
+      this.ContactsService.getContacts();
     } else {
       console.warn('Formular ungültig:', this.profileForm.value);
     }

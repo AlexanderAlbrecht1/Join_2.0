@@ -7,9 +7,34 @@
 }
 
 .left-side {
+  @include dFlex($fd: column, $ai: start);
   background-color: $navbarBlue;
   width: 467px;
   height: 100%;
+  padding: 0 48px;
+  > p:nth-child(2) {
+    font-family: "Inter";
+    @include fontSize($size: 61px, $weight: 700);
+    color: $whitewhite;
+  }
+  > p:nth-child(3) {
+    font-family: "Inter";
+    @include fontSize($size: 27px, $weight: 400);
+    color: $whitewhite;
+  }
+}
+
+.join-logo-wrapper {
+  width: 56px;
+  height: 66px;
+  @include backgroundPicture($url: "/img/contacts/add_contact_logo.svg");
+}
+
+.seperator {
+  margin-top: 16px;
+  width: 90px;
+  height: 66px;
+  border-top: 3px solid $lightBlue;
 }
 
 .right-side {
@@ -24,7 +49,7 @@
   right: 48px;
   width: 32px;
   height: 32px;
-  @include backgroundPicture($url: '/img/contacts/cancel_add_contact_icon.svg');
+  @include backgroundPicture($url: "/img/contacts/cancel_add_contact_icon.svg");
   &:hover {
     border-radius: 100%;
     background-color: $borderGrey;
