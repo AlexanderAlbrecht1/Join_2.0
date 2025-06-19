@@ -7,6 +7,11 @@
   padding: 0 24px;
 }
 
+.contacts {
+  height: calc(100vh - 200px);
+  overflow-y: scroll;
+}
+
 .single-contact {
   box-sizing: border-box;
   width: 100%;
@@ -49,7 +54,7 @@
 //Add contact button
 
 .button-wrapper {
-  padding: 24px 0
+  padding: 24px 0;
 }
 
 .add-contact-btn {

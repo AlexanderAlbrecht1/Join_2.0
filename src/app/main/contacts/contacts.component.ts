@@ -24,6 +24,10 @@ export class ContactsComponent {
   readonly dialog = inject(MatDialog);
 
   constructor(private contactService: ContactsService) {
+
+  }
+
+  ngOnInit() {
     this.showConatacts();
   }
 
