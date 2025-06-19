@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { environment } from '../../../environment';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -17,6 +18,12 @@ export class SupabaseService {
 
   get client() {
     return this.supabase;
+  }
+
+  async getContacts() {
+    const { data, error } = await this.supabase.from('contacts').select('*');
+    if (error) throw error;
+    return data;
   }
 
 }

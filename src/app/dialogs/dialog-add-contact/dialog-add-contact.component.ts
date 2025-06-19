@@ -7,6 +7,8 @@ import { MatInputModule } from '@angular/material/input';
 import { ContactsService } from '../../services/contacts.service';
 import { Contact } from '../../models/contact.model';
 import { MatDialog } from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
+import { ContactsComponent } from '../../main/contacts/contacts.component';
 
 @Component({
   selector: 'app-dialog-add-contact',
@@ -22,7 +24,10 @@ import { MatDialog } from '@angular/material/dialog';
 export class DialogAddContactComponent {
   dialog = inject(MatDialog);
 
-  constructor(public ContactsService: ContactsService) {}
+  constructor(
+    public ContactsService: ContactsService,
+    private dialogRef: MatDialogRef<DialogAddContactComponent>
+  ) {}
 
   profileForm = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -34,7 +39,7 @@ export class DialogAddContactComponent {
       const formValues = this.profileForm.value;
       const newContact = this.ContactsService.createNewContact(formValues);
       await this.ContactsService.addContact(newContact);
-      this.closeDialog();
+      this.closeDialogWithRefresh();
       this.ContactsService.getContacts();
     } else {
       console.warn('Formular ungültig:', this.profileForm.value);
@@ -43,5 +48,9 @@ export class DialogAddContactComponent {
 
   closeDialog() {
     this.dialog.closeAll();
+  }
+
+  closeDialogWithRefresh() {
+    this.dialogRef.close('refresh');
   }
 }

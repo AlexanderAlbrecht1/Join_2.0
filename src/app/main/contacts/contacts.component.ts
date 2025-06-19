@@ -11,6 +11,7 @@ import {
 } from '@angular/material/dialog';
 import { DialogAddContactComponent } from '../../dialogs/dialog-add-contact/dialog-add-contact.component';
 import { ContactsService } from '../../services/contacts.service';
+import { SupabaseService } from '../../services/supabase.service';
 
 @Component({
   selector: 'app-contacts',
@@ -23,9 +24,10 @@ export class ContactsComponent {
 
   readonly dialog = inject(MatDialog);
 
-  constructor(private contactService: ContactsService) {
-
-  }
+  constructor(
+    private contactService: ContactsService,
+    private supabaseService: SupabaseService
+  ) {}
 
   ngOnInit() {
     this.showConatacts();
@@ -37,7 +39,7 @@ export class ContactsComponent {
   }
 
   sortContactsByName() {
-     return this.contacts.sort((a, b) => a.name.localeCompare(b.name));
+    return this.contacts.sort((a, b) => a.name.localeCompare(b.name));
   }
 
   async showConatacts() {
@@ -46,11 +48,17 @@ export class ContactsComponent {
   }
 
   openDialogAddContact() {
-    this.dialog.open(DialogAddContactComponent, {
+    const dialogRef = this.dialog.open(DialogAddContactComponent, {
       width: '1212px',
       maxWidth: 'none',
       height: '592px',
       maxHeight: 'none',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result === 'refresh') {
+        this.showConatacts(); // Kontakte neu laden
+      }
     });
   }
 }
