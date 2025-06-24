@@ -4,11 +4,12 @@ import { SupabaseService } from '../../services/supabase.service';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
 
 
 @Component({
   selector: 'app-register',
-  imports: [ CommonModule, RouterLink, RouterLinkActive, FormsModule],
+  imports: [ CommonModule, RouterLink, RouterLinkActive, FormsModule, MatCardModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })

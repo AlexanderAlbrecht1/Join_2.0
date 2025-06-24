@@ -1,19 +1,21 @@
 <section class="sign-up-wrapper">
-  <h1>Sign up</h1>
-  <form (submit)="signUp(); $event.preventDefault();">
-    <div class="input-wrapper">
-      <input [(ngModel)]="name" name="name" placeholder="Name" type="text">
-      <input [(ngModel)]="email" name="email" placeholder="Email" type="email">
-      <input [(ngModel)]="password" name="password" placeholder="Password" type="password">
-      <input [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="Confirm Password" type="password">
-    </div>
-    <div class="policy-wrapper">
-      <input type="checkbox">
-      <h2>
-        I accept the
-        <a [routerLink]="['/privacypolicy']" routerLinkActive="router-link-active">Privacy policy</a>
-      </h2>
-    </div>
-    <button type="submit">Sign up</button>
-  </form>
+  <mat-card class="sign-up-container">
+    <h1 class="font-inter">Sign up</h1>
+    <form (submit)="signUp(); $event.preventDefault();">
+      <div class="input-wrapper">
+        <input [(ngModel)]="name" name="name" placeholder="Name" type="text">
+        <input [(ngModel)]="email" name="email" placeholder="Email" type="email">
+        <input [(ngModel)]="password" name="password" placeholder="Password" type="password">
+        <input [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="Confirm Password" type="password">
+      </div>
+      <div class="policy-wrapper">
+        <input type="checkbox">
+        <h2 class="font-inter">
+          I accept the
+          <a class="font-inter" [routerLink]="['/privacypolicy']" routerLinkActive="router-link-active">Privacy policy</a>
+        </h2>
+      </div>
+      <button class="font-inter sign-up-btn" type="submit">Sign up</button>
+    </form>
+  </mat-card>
 </section>
