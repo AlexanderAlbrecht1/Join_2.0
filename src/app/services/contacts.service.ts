@@ -2,12 +2,16 @@ import { Contact } from './../models/contact.model';
 import { Injectable } from '@angular/core';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { environment } from '../../../environment';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ContactsService {
   private supabase: SupabaseClient;
+
+  private selectedContact = new BehaviorSubject<any>(null); // kann auch ein spezifischer Typ sein
+  selectedContact$ = this.selectedContact.asObservable();
 
   constructor() {
     this.supabase = createClient(
@@ -57,5 +61,9 @@ export class ContactsService {
       initials: this.generateInitials(formValues.name ?? ''),
     });
     return newContact;
+  }
+
+  setSelectedContact(contact: any) {
+    this.selectedContact.next(contact);
   }
 }

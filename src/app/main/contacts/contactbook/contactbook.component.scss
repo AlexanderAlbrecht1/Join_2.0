@@ -1,0 +1,92 @@
+@import "../../../../mixins.scss";
+@import "../../../../styles.scss";
+
+.contact-book {
+  width: 400px;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.contacts {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 24px;
+  height: calc(100vh - 200px);
+  // overflow-y: scroll;
+}
+
+.single-contact {
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px 24px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 32px;
+  &:hover {
+    cursor: pointer;
+    background-color: $navbarBlue ;
+    color: $whitewhite;
+  }
+}
+
+.contact-monogram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 100%;
+  > p {
+    font-family: "Inter";
+    color: $whitewhite;
+    @include fontSize();
+  }
+}
+
+.name-mail {
+  justify-content: center;
+  > p:nth-child(1) {
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+  }
+  > a {
+    font-family: "Inter";
+    @include fontSize($size: 18px);
+    text-decoration: none;
+    color: $linkBlue;
+  }
+}
+
+//Add contact button
+
+.button-wrapper {
+  padding: 24px 0;
+}
+
+.add-contact-btn {
+  box-sizing: border-box;
+  @include dFlex();
+  padding: 12px 64px;
+  gap: 16px;
+  background-color: $navbarBlue;
+  border-radius: 10px;
+  border: none;
+  color: $whitewhite;
+  font-family: "Inter";
+  @include fontSize($size: 21px, $weight: 700);
+  &:hover {
+    cursor: pointer;
+    background-color: $lightBlue;
+  }
+}
+
+.icon-wrapper {
+  width: 32px;
+  height: 32px;
+  background-image: url("/img/contacts/add_contact_icon.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
