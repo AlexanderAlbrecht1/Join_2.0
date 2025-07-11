@@ -1,0 +1,31 @@
+@import "../../../../mixins.scss";
+@import "../../../../styles.scss";
+
+.wrapper-contact-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: $bgColor;
+}
+
+.headline {
+  height: 73px;
+  gap: 30px;
+  @include dFlex();
+  > h1 {
+    font-family: "Inter";
+    @include fontSize($size: 61px, $weight: 700);
+  }
+  > div {
+    border-left: 3px solid $lightBlue;
+    border-radius: 3px;
+    height: 80%;
+  }
+  > p {
+    font-family: "Inter";
+    @include fontSize($size: 27px, $weight: 700);
+    color: $navbarBlue;
+  }
+}
+

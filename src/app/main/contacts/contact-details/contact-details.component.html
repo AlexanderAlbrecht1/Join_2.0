@@ -1,1 +1,38 @@
-<p>contact-details works!</p>
+<section class="wrapper-contact-details">
+  <div class="headline">
+    <h1>Contacts</h1>
+    <div></div>
+    <p>Better with a team</p>
+  </div>
+
+  <section class="name">
+    <div class="monogram">
+      {{ selectedContact.initials }}
+    </div>
+    <div class="name-buttons">
+      <p>{{ selectedContact.name }}</p>
+      <div class="buttons">
+        <div class="edit-wapper">
+          <div class="icon"></div>
+          <p>Edit</p>
+        </div>
+        <div class="delete-wapper">
+          <div class="icon"></div>
+          <p>Delete</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="details">
+    <div class="mail">
+      <p>Email</p>
+      <p>{{selectedContact.email}}</p>
+    </div>
+    <div class="phone">
+      <p>Phone</p>
+      <p>{{ selectedContact.phone }}</p>
+    </div>
+  </section>
+
+</section>
